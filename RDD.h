@@ -16,6 +16,7 @@ public:
 	list<split> _split;
 	string file_path;
 	int split_size;
+	int rdd_id;
 	bool read_flag;
 	RDD();
 	void text_file(string file_path, int size);
