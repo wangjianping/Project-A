@@ -7,15 +7,24 @@
 using namespace std;
 
 class split {
-  list<string> elem;
+public:
+	list<string> elem;
 };
 
 class RDD {
-	list<split> spl;
+public:
+	list<split> _split;
+	string file_path;
+	int split_size;
+	bool read_flag;
 	RDD();
+	void text_file(string file_path, int size);
 	RDD &map(void *func);
-	RDD &filter(void *func);
+	RDD &filter(bool (*func)(string));
 	RDD &reduce();
+	void lazy_read();
+	int count();
+	void debug();
 };
 
 #endif
