@@ -11,6 +11,7 @@ RDD::RDD() {
 RDD &RDD::map(void *func) {
 	return *this;
 }
+
 RDD &RDD::filter(bool (*func)(string)){
 	if(this->read_flag==false){
 		lazy_read();
@@ -31,11 +32,13 @@ RDD &RDD::filter(bool (*func)(string)){
 	return *this;
 
 }
+
 void RDD::text_file(string file_path, int size) {
 	this->file_path=file_path;
 	this->split_size=size;
 
 }
+
 RDD &RDD::reduce( ){
 	return *this;
 }
